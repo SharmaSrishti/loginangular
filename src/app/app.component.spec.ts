@@ -1,9 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import {FirstComponent} from './first/first.component';
+import {By} from '@angular/platform-browser';
+import {DebugElement} from '@angular/core';
 
 describe('AppComponent', () => {
+ // let radio: DebugElement
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [
         AppComponent
       ],
@@ -26,6 +32,10 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('pro app is running!');
+    // radio = fixture.debugElement.query(By.css('radio'));
+   //  expect(compiled.querySelector('.content span').textContent).toContain('pro app is running!');
   });
 });
+
+
+

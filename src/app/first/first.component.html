@@ -8,6 +8,11 @@
     margin: 20px;
   }
 </style> -->
+<h1>Name : {{first}}</h1>
+
+<app-details [name]="first">
+</app-details>
+
 
 <head>
   <title>Bootstrap Example</title>
@@ -27,10 +32,10 @@
 
 
 
-<div style="height:100vh">
+<form (ngSubmit)="onSubmit()" >
+
+<div style="height:100vh" >
   <div style="float:left; width: 68%; height:100%;">
-
-
 
 
     <div style="float:top; height:15%;  background-color:lightgray;margin: 2%; ">
@@ -38,11 +43,12 @@
       <div style="padding-left: 2%; padding-top: 2%;">
         <h4>1.Where to publish?</h4>
 
-        Azure &nbsp; <input type="radio" name="radio">
-        On-premise &nbsp;  <input type="radio" name="radio">
+        Azure <input id='azure' class="n" type="radio" name="radio" value="Azure"  (ngModelChange)="perform()" [ngModel]="platform">
+        On-premise &nbsp;  <input id="premise" class="n" type="radio" name="radio"  value="On-Premise" [ngModel]="platform">
+
       </div>
-     </div>
-    <div style="height:45%;padding-left: 2%; padding-top: 2%;background-color:lightgray;margin: 2%">
+    </div>
+    <div style="height:50%;padding-left: 2%; padding-top: 2%;background-color:lightgray;margin: 2%">
       <table width="100%" cellpadding="2"  >
         <thead> <b> 2. Basic Information </b></thead>
 
@@ -55,7 +61,7 @@
         </tr>
         <tr>
           <td>
-            <input type ="text" name="name"  >
+            <input type ="text" name="name" id="fname" >
           </td>
           <td>
             <input type ="text" name="name" >
@@ -197,9 +203,10 @@
   </div>
 
 <div style="float:bottom; height:20%;padding-left: 2%; padding-top: 1%;background-color:white;margin: 2%">
-<button id="publish" >Publish</button>
+<button  id="publish" type="submit">Publish</button>
 
 
 </div>
 
+</form>
 

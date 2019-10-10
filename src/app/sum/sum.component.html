@@ -1,0 +1,6 @@
+<form #nform="ngForm" (ngSubmit)="onsubmit()">
+Number 1:<input type="text" name="num1" [(ngModel)]="num1"><br><br>
+Number 2: <input type="text" name="num2" [(ngModel)]="num2"><br><br>
+Result: <input type="text" name="result" value="{{result}}"><br><br>
+  <input type="submit" value="submit">
+</form>
